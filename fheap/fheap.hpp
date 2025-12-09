@@ -146,6 +146,7 @@ class FHeap {
 
 		   assigning instead of substracting, because boost::heap::fibonacci_heap does that
 		   see https://www.boost.org/doc/libs/master/doc/html/doxygen/classboost_1_1heap_1_1fibonacci__heap.html
+
 		   clang-format on
         */
 
