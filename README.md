@@ -133,4 +133,4 @@ python3 make_table_and_plot.py [-h]
 </tr>
 </table>
 
-![](benchmark_results/plot.png)
+![](benchmark-results/plot.png)
