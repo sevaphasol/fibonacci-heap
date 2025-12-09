@@ -109,3 +109,28 @@ python3 make_table_and_plot.py [-h]
 ```
 
 `bench.csv` содержит сводную таблицу, `bench.png` — график времени (CPU) от размера задачи в логарифмической шкале по оси X.
+
+## Результаты бенчмарков
+
+Бенчмарк был проведен на машине со следующими параметрами
+
+<table>
+<tr>
+  <td>Процессор</td>
+  <td>AMD Ryzen 7 8845H</td>
+</tr>
+<tr>
+  <td>ОС</td>
+  <td>Linux Mint 22.1</td>
+</tr>
+<tr>
+  <td>ОЗУ</td>
+  <td>32 Гб</td>
+</tr>
+<tr>
+  <td>Компилятор</td>
+  <td>g++ -O3 13.3.0</td>
+</tr>
+</table>
+
+![](benchmark_results/plot.png)
