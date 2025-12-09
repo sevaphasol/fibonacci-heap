@@ -142,6 +142,13 @@ class FHeap {
     void
     DecreaseKey( const Handle& h, int newKey )
     {
+        /* clang-format off
+
+		   assigning instead of substracting, because boost::heap::fibonacci_heap does that
+		   see https://www.boost.org/doc/libs/master/doc/html/doxygen/classboost_1_1heap_1_1fibonacci__heap.html
+		   clang-format on
+        */
+
         if ( h.ptr_ == nullptr )
         {
             throw std::invalid_argument( "Invalid handle" );
@@ -297,12 +304,12 @@ class FHeap {
 
         x->parent = nullptr;
         x->mark   = false;
+        x->left   = x;
+        x->right  = x;
 
         if ( min_ == nullptr )
         {
-            min_     = x;
-            x->left  = x;
-            x->right = x;
+            min_ = x;
         } else
         {
             mergeRootLists( min_, x );

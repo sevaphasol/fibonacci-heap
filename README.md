@@ -45,7 +45,34 @@ public:
 
 ## Зависимости
 
-GoogleTest
+- g++
+- CMake
+- GoogleTest
+- GoogleBenchmark
+- Boost
+
+```bash
+sudo apt-get install cmake g++ libgtest-dev libbenchmark-dev libboost-all-dev
+```
+
+- Python3 + пакеты `pandas`, `matplotlib`
+
+```bash
+sudo apt-get install python3-pandas python3-matplotlib
+```
+
+или
+
+```bash
+sudo apt-get install pip
+pip install -r requirements.txt
+```
+
+либо, если Вы приличный человек
+
+```bash
+conda create --name fheap_benchmark python=3.11 -y --file requirements.txt
+```
 
 ---
 
@@ -60,3 +87,25 @@ GoogleTest
 ```
 ./scripts/test.sh
 ```
+
+---
+
+## Бенчмарки и визуализация
+
+Соберите проект и запустите бенчмарки в JSON-формате:
+
+```bash
+./build/fheap_bench [artifacts_dir] [output_json]
+```
+
+Построить таблицу и график (все кучи на одном графике):
+
+```bash
+python3 make_table_and_plot.py [-h]
+                               --input        INPUT
+                               --artifacts    ARTIFACTS
+                               --output-plot  OUTPUT_PLOT
+                               --output-table OUTPUT_TABLE
+```
+
+`bench.csv` содержит сводную таблицу, `bench.png` — график времени (CPU) от размера задачи в логарифмической шкале по оси X.
